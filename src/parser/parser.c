@@ -6,32 +6,11 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 17:36:03 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/18 18:37:31 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/19 17:47:07 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-int	check_flags(char *argv, int *mode, int *bench)
-{
-	if (argv && argv[0] == '-' && argv[1] == '-')
-	{
-		if (ft_strncmp(argv, "--simple", 9) == 0 && *mode == 0)
-			*mode = 1;
-		else if (ft_strncmp(argv, "--medium", 9) == 0 && *mode == 0)
-			*mode = 2;
-		else if (ft_strncmp(argv, "--complex", 10) == 0 && *mode == 0)
-			*mode = 3;
-		else if (ft_strncmp(argv, "--adaptive", 11) == 0 && *mode == 0)
-			*mode = 4;
-		else if (ft_strncmp(argv, "--bench", 8) == 0 && *bench == 0)
-			*bench = 1;
-		else
-			return (-1);
-		return (1);
-	}
-	return (0);
-}
 
 int	check_space_number(char *argv)
 {
@@ -104,6 +83,26 @@ int	check_definitive_numbers(char **nb)
 	return (0);
 }
 
+char **replace_tabs(char **argv)
+{
+	int i;
+	int j;
+
+	j = 0;
+	while (argv[j])
+	{
+		i = 0;
+		while (argv[j][i] != '\0')
+		{
+			if (argv[j][i] >= 9 && argv[j][i] <= 13)
+				argv[j][i] = ' ';
+			i++;
+		}
+		j++;
+	}
+	return(argv);
+}
+
 int	parser(int argc, char **argv, t_data *data)
 {
 	int		i;
@@ -111,6 +110,7 @@ int	parser(int argc, char **argv, t_data *data)
 	char	**taking_value;
 
 	i = 0;
+	argv = replace_tabs(argv);
 	while (++i < argc)
 	{
 		check = check_flags(argv[i], &data->mode, &data->bench);
@@ -121,10 +121,11 @@ int	parser(int argc, char **argv, t_data *data)
 			if (check_space_number(argv[i]) == -1)
 				return (0);
 			taking_value = ft_split(argv[i], ' ');
-			if (check_definitive_numbers(taking_value) == -1)
-				return (0);
+			if (check_definitive_numbers(taking_value) == -1 || taking_value == NULL)
+				return (parser_free(taking_value, NULL), 0);
 			if (convert_to_nbr(&data->stack_a, taking_value) == -1)
-				return (0);
+				return (parser_free(taking_value, NULL), 0);
+			parser_free(taking_value, NULL);
 		}
 	}
 	return (1);

@@ -9,6 +9,7 @@ LIB_DIR = $(INC_DIR)/libs
 SRCS = $(SRC_DIR)/main.c \
 	   $(SRC_DIR)/parser/parser.c \
 	   $(SRC_DIR)/parser/parser_utils.c \
+	   $(SRC_DIR)/parser/parser_free.c \
 	   $(SRC_DIR)/modes/mode_selector.c \
 	   $(SRC_DIR)/modes/adaptive/adaptive_mode.c \
 	   $(SRC_DIR)/modes/bench/bench_mode.c \

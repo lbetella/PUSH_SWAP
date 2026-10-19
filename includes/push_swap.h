@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:58:07 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/18 19:52:00 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/19 17:05:23 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 typedef struct s_stack_node
 {
-	int					mode;
-	int					bench;
 	int					value;
 	int					index;
 	int					pos;
@@ -73,4 +71,6 @@ void					bench_mode(t_data *data);
 void					simple_mode(t_data *data);
 void					complex_mode(t_data *data);
 void					medium_mode(t_data *data);
+int						pos_upper_len(t_stack_node **stack);
+void					parser_free(char **taking_value, t_stack_node *stack_a);
 #endif
