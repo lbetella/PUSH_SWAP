@@ -14,18 +14,18 @@
 
 void	mode_selector(t_data *data)
 {
-	if (data->mode == '1')
+	if (data->mode == 1)
 	{
 		ft_printf("modo cogio");
 		simple_mode(data);
 	}
-	else if (data->mode == '2')
+	else if (data->mode == 2)
 		medium_mode(data);
-	else if (data->mode == '3')
+	else if (data->mode == 3)
 		complex_mode(data);
-	else if (data->mode == '4' || data->mode == '0')
+	else if (data->mode == 4 || data->mode == 0)
 		adaptive_mode(data);
-	if (data->bench == '1')
+	if (data->bench == 1)
 		bench_mode(data);
 }
 
