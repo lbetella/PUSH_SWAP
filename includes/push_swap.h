@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:58:07 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/19 17:05:23 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/19 19:00:58 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,6 @@ void					complex_mode(t_data *data);
 void					medium_mode(t_data *data);
 int						pos_upper_len(t_stack_node **stack);
 void					parser_free(char **taking_value, t_stack_node *stack_a);
+void					cal_index(t_stack_node *stack);
+
 #endif
