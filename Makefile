@@ -18,6 +18,9 @@ SRCS = $(SRC_DIR)/main.c \
 	   $(SRC_DIR)/modes/medium/medium_mode.c \
 	   $(SRC_DIR)/modes/medium/medium_mode_utils.c \
 	   $(SRC_DIR)/modes/simple/simple_mode.c \
+	   $(SRC_DIR)/modes/simple/simple_mode_utils.c \
+	   $(SRC_DIR)/modes/simple/look_for_target.c \
+	   $(SRC_DIR)/modes/simple/cost.c \
 	   $(SRC_DIR)/movements/pa.c \
 	   $(SRC_DIR)/movements/pb.c \
 	   $(SRC_DIR)/movements/ra.c \
@@ -33,6 +36,7 @@ SRCS = $(SRC_DIR)/main.c \
 	   $(SRC_DIR)/movements/sb.c \
 	   $(SRC_DIR)/movements/ss.c \
 	   $(SRC_DIR)/movements/swap.c \
+	   $(SRC_DIR)/movements/pos_upper_len.c \
 
 LIBFT = $(LIB_DIR)/libft.a
 

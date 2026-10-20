@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/17 17:36:03 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/19 17:47:07 by guilfran         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   parser.c                                          :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: lbetella <lbetella@student.42malaga.com>  #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/17 17:36:03 by lbetella         #+#    #+#              */
+/*   Updated: 2026/10/20 19:35:33 by lbetella        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	check_definitive_numbers(char **nb)
 		while (nb[j][i] != '\0')
 		{
 			if (!(nb[j][i] >= '0' && nb[j][i] <= '9') && !(nb[j][i] == '-'
-					|| nb[j][i] == '+'))
+						|| nb[j][i] == '+'))
 				return (-1);
 			if (nb[j][i] == '-' || nb[j][i] == '+')
 			{
@@ -83,10 +83,10 @@ int	check_definitive_numbers(char **nb)
 	return (0);
 }
 
-char **replace_tabs(char **argv)
+char	**replace_tabs(char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (argv[j])
@@ -100,7 +100,7 @@ char **replace_tabs(char **argv)
 		}
 		j++;
 	}
-	return(argv);
+	return (argv);
 }
 
 int	parser(int argc, char **argv, t_data *data)
@@ -121,7 +121,8 @@ int	parser(int argc, char **argv, t_data *data)
 			if (check_space_number(argv[i]) == -1)
 				return (0);
 			taking_value = ft_split(argv[i], ' ');
-			if (check_definitive_numbers(taking_value) == -1 || taking_value == NULL)
+			if (check_definitive_numbers(taking_value) == -1
+				|| taking_value == NULL)
 				return (parser_free(taking_value, NULL), 0);
 			if (convert_to_nbr(&data->stack_a, taking_value) == -1)
 				return (parser_free(taking_value, NULL), 0);

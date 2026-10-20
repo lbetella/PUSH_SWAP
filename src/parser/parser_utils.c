@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parser_utils.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/17 17:44:02 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/19 18:02:05 by guilfran         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   parser_utils.c                                    :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: lbetella <lbetella@student.42malaga.com>  #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/17 17:44:02 by lbetella         #+#    #+#              */
+/*   Updated: 2026/10/20 19:34:05 by lbetella        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ t_stack_node	*nbr_to_node(int nbr)
 int	check_if_exist(t_stack_node **stack_a, int nbr)
 {
 	t_stack_node	*current;
-	int	first;
+	int				first;
 
 	if (!stack_a || !*stack_a)
-		return(0);
+		return (0);
 	first = 1;
 	current = *stack_a;
 	while (current != *stack_a || first == 1)

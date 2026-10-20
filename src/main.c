@@ -35,28 +35,28 @@
 // }
 
 
-static void	ft_print_stack(char *name, t_stack_node *stack)
-{
-	t_stack_node	*current;
-	int				first;
+// static void	ft_print_stack(char *name, t_stack_node *stack)
+// {
+// 	t_stack_node	*current;
+// 	int				first;
 
-	ft_printf("=== STACK %s ===\n", name);
-	if (!stack)
-	{
-		ft_printf("(vacía)\n");
-		ft_printf("================\n");
-		return ;
-	}
-	current = stack;
-	first = 1;
-	while (current != stack || first)
-	{
-		ft_printf("Value: %d | Index: %d\n", current->value, current->index);
-		current = current->next;
-		first = 0;
-	}
-	ft_printf("================\n");
-}
+// 	ft_printf("=== STACK %s ===\n", name);
+// 	if (!stack)
+// 	{
+// 		ft_printf("(vacía)\n");
+// 		ft_printf("================\n");
+// 		return ;
+// 	}
+// 	current = stack;
+// 	first = 1;
+// 	while (current != stack || first)
+// 	{
+// 		ft_printf("Value: %d | Index: %d\n", current->value, current->index);
+// 		current = current->next;
+// 		first = 0;
+// 	}
+// 	ft_printf("================\n");
+// }
 
 int	main(int argc, char **argv)
 {
@@ -83,11 +83,11 @@ int	main(int argc, char **argv)
 	mode_selector(&data);
 
 	// Comprobación visual de que el parsing y las flags han funcionado
-	ft_printf("[DEBUG] Modo: %i | Bench: %i\n", data.mode, data.bench);
+	//ft_printf("[DEBUG] Modo: %i | Bench: %i\n", data.mode, data.bench);
 
 
-	ft_print_stack("A", data.stack_a);
-	ft_print_stack("B", data.stack_b);
+	//ft_print_stack("A", data.stack_a);
+	//ft_print_stack("B", data.stack_b);
 
 	// Ejecución del selector de algoritmos
 	// ...
