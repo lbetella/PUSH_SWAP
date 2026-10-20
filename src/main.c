@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:37:42 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/19 19:04:40 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/20 13:57:50 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,28 @@
 // 	return (0);
 // }
 
-// Función auxiliar para imprimir el stack_a (y comprobar el parsing)
-static void ft_print_stack_a(t_stack_node *stack_a)
-{
-    t_stack_node    *current;
-    int             first;
 
-    ft_printf("=== STACK A ===\n");
-    if (!stack_a)
-        return ;
-    current = stack_a;
-    first = 1;
-    while (current != stack_a || first)
-    {
-        ft_printf("Value: %d | Index: %d\n", current->value, current->index);
-        current = current->next;
-        first = 0;
-    }
-    ft_printf("===============\n");
+static void	ft_print_stack(char *name, t_stack_node *stack)
+{
+	t_stack_node	*current;
+	int				first;
+
+	ft_printf("=== STACK %s ===\n", name);
+	if (!stack)
+	{
+		ft_printf("(vacía)\n");
+		ft_printf("================\n");
+		return ;
+	}
+	current = stack;
+	first = 1;
+	while (current != stack || first)
+	{
+		ft_printf("Value: %d | Index: %d\n", current->value, current->index);
+		current = current->next;
+		first = 0;
+	}
+	ft_printf("================\n");
 }
 
 int	main(int argc, char **argv)
@@ -80,12 +84,17 @@ int	main(int argc, char **argv)
 
 	// Comprobación visual de que el parsing y las flags han funcionado
 	ft_printf("[DEBUG] Modo: %i | Bench: %i\n", data.mode, data.bench);
-	ft_print_stack_a(data.stack_a);
+
+
+	ft_print_stack("A", data.stack_a);
+	ft_print_stack("B", data.stack_b);
 
 	// Ejecución del selector de algoritmos
-
+	// ...
 
 	parser_free(NULL, data.stack_a);
+	// (Opcional pero recomendable) Liberar también stack_b si contiene elementos
+	// parser_free(NULL, data.stack_b);
 
 	return (0);
 }

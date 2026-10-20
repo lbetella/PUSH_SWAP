@@ -16,6 +16,7 @@ SRCS = $(SRC_DIR)/main.c \
 	   $(SRC_DIR)/modes/bench/bench_mode.c \
 	   $(SRC_DIR)/modes/complex/complex_mode.c \
 	   $(SRC_DIR)/modes/medium/medium_mode.c \
+	   $(SRC_DIR)/modes/medium/medium_mode_utils.c \
 	   $(SRC_DIR)/modes/simple/simple_mode.c \
 	   $(SRC_DIR)/movements/pa.c \
 	   $(SRC_DIR)/movements/pb.c \

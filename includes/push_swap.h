@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:58:07 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/19 19:00:58 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/20 15:59:11 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,10 @@ void					medium_mode(t_data *data);
 int						pos_upper_len(t_stack_node **stack);
 void					parser_free(char **taking_value, t_stack_node *stack_a);
 void					cal_index(t_stack_node *stack);
-
+int						get_chunk_size(int size);
+int						stack_len(t_stack_node *stack_a);
+int						get_max_pos(t_stack_node *stack_b);
+void					order_three_numbers(t_data *data);
+void					send_to_b(t_data *data, int min, int chunk_size);
+void					send_to_a(t_data *data);
 #endif
