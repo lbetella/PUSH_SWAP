@@ -6,21 +6,24 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:44:19 by lbetella          #+#    #+#             */
-/*   Updated: 2026/10/17 17:52:46 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/21 19:28:26 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	rr(t_stack_node **stack_a, t_stack_node **stack_b)
+void	rr(t_data *data)
 {
-	if (!stack_a || !stack_b || !*stack_a || !*stack_b
-		|| (*stack_a)->next == *stack_a || (*stack_b)->next == *stack_b)
+	if (!data->stack_a || !data->stack_b || !data->stack_a || !data->stack_b
+		|| data->stack_a->next == data->stack_a
+		|| data->stack_b->next == data->stack_b)
 		return ;
 	else
 	{
-		rotate(stack_a);
-		rotate(stack_b);
+		rotate(&data->stack_a);
+		rotate(&data->stack_b);
 		write(1, "rr\n", 3);
+		data->rr++;
+		data->total_ops++;
 	}
 }

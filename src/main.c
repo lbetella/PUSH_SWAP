@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:37:42 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/20 13:57:50 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/22 14:31:52 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,38 +62,30 @@ int	main(int argc, char **argv)
 {
 	t_data data;
 
-	// Inicialización de la estructura de datos
-	data.mode = 0;
-	data.bench = 0;
-	data.stack_a = NULL;
-	data.stack_b = NULL;
+	start(&data);
 
-	// Si no hay argumentos suficientes, salimos limpiamente
 	if (argc < 2)
 		return (0);
 
-	// Validación de argumentos y parsing
 	if (!parser(argc, argv, &data) || !data.stack_a)
 	{
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		parser_free(NULL, data.stack_a);
 		return (1);
 	}
-
+	
+	cal_index(data.stack_a);
+	data.disorder = cal_index_error(&data);
 	mode_selector(&data);
 
-	// Comprobación visual de que el parsing y las flags han funcionado
 	//ft_printf("[DEBUG] Modo: %i | Bench: %i\n", data.mode, data.bench);
 
 
 	//ft_print_stack("A", data.stack_a);
 	//ft_print_stack("B", data.stack_b);
 
-	// Ejecución del selector de algoritmos
-	// ...
-
 	parser_free(NULL, data.stack_a);
-	// (Opcional pero recomendable) Liberar también stack_b si contiene elementos
+	
 	// parser_free(NULL, data.stack_b);
 
 	return (0);

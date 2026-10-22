@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 18:23:26 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/18 19:56:47 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/21 19:36:09 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	bench_mode(t_data *data)
 {
-	(void)data;
+	print_disorder(data->disorder);
+	print_strategy(data->mode, data->disorder);
+	print_total(data->total_ops);
+	print_movements(data);
 }

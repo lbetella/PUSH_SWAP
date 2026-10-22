@@ -7,14 +7,21 @@ INC_DIR = includes
 LIB_DIR = $(INC_DIR)/libs
 
 SRCS = $(SRC_DIR)/main.c \
+	   $(SRC_DIR)/initializer/start.c \
 	   $(SRC_DIR)/parser/parser.c \
 	   $(SRC_DIR)/parser/parser_utils.c \
 	   $(SRC_DIR)/parser/parser_free.c \
 	   $(SRC_DIR)/modes/mode_selector.c \
 	   $(SRC_DIR)/modes/cal_index.c \
 	   $(SRC_DIR)/modes/adaptive/adaptive_mode.c \
+	   $(SRC_DIR)/modes/adaptive/cal_index_error.c \
 	   $(SRC_DIR)/modes/bench/bench_mode.c \
+	   $(SRC_DIR)/modes/bench/print_disorder.c \
+	   $(SRC_DIR)/modes/bench/print_strategy.c \
+	   $(SRC_DIR)/modes/bench/print_total.c \
+	   $(SRC_DIR)/modes/bench/print_movements.c \
 	   $(SRC_DIR)/modes/complex/complex_mode.c \
+	   $(SRC_DIR)/modes/complex/complex_mode_utils.c \
 	   $(SRC_DIR)/modes/medium/medium_mode.c \
 	   $(SRC_DIR)/modes/medium/medium_mode_utils.c \
 	   $(SRC_DIR)/modes/simple/simple_mode.c \

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   simple_mode.c                                     :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: lbetella <lbetella@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/18 18:14:05 by lbetella         #+#    #+#              */
-/*   Updated: 2026/10/20 19:45:03 by lbetella        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   simple_mode.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/18 18:14:05 by lbetella          #+#    #+#             */
+/*   Updated: 2026/10/21 17:38:17 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ static void	a_to_b(t_data *data)
 	while (counter <= len_a)
 	{
 		if (data->stack_a->index <= ((len_a + 1) / 2))
-			pb(&data->stack_a, &data->stack_b);
+			pb(data);
 		else
-			ra(&data->stack_a);
+			ra(data);
 		counter++;
 	}
 	len_a = pos_upper_len(&data->stack_a);
 	while (len_a > 3)
 	{
-		pb(&data->stack_a, &data->stack_b);
+		pb(data);
 		len_a--;
 	}
 }
@@ -57,7 +57,6 @@ void	simple_mode(t_data *data)
 	t_stack_node	*to_move;
 	t_stack_node	*to_find;
 
-	cal_index(data->stack_a);
 	a_to_b(data);
 	order_three_numbers(data);
 	to_move = NULL;
@@ -73,8 +72,8 @@ void	simple_mode(t_data *data)
 	while (to_find != data->stack_a)
 	{
 		if (to_find->upper == 1)
-			ra(&data->stack_a);
+			ra(data);
 		else
-			rra(&data->stack_a);
+			rra(data);
 	}
 }
