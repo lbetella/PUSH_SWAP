@@ -28,6 +28,7 @@ SRCS = $(SRC_DIR)/main.c \
 	   $(SRC_DIR)/modes/simple/simple_mode_utils.c \
 	   $(SRC_DIR)/modes/simple/look_for_target.c \
 	   $(SRC_DIR)/modes/simple/cost.c \
+	   $(SRC_DIR)/modes/less_than_five/less_than_five.c \
 	   $(SRC_DIR)/movements/pa.c \
 	   $(SRC_DIR)/movements/pb.c \
 	   $(SRC_DIR)/movements/ra.c \

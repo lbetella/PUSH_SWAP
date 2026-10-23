@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 18:14:16 by lbetella          #+#    #+#             */
-/*   Updated: 2026/10/22 18:05:52 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/23 20:06:27 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,14 +116,14 @@ void	complex_mode(t_data *data)
 	j = 2;
 	counter = 0;
 	len_a = pos_upper_len(&data->stack_a);
-	if (len_a <= 100)
+	if (len_a > 6 && len_a <= 100)
 		partition_100(data, len_a);
-	else if (len_a <= 300)
+	else if (len_a > 100 && len_a <= 300)
 	{
 		pivot(data, len_a);
 		partition_300(data, counter, i, j);
 	}
-	else
+	else if (len_a > 300)
 	{
 		pivot(data, len_a);
 		partition_500(data, counter, i, j);

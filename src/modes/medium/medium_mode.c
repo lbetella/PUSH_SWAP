@@ -6,38 +6,11 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 18:14:14 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/21 17:37:53 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/23 18:03:34 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/push_swap.h"
-
-void	order_three_numbers(t_data *data)
-{
-	int	top;
-	int	mid;
-	int	bot;
-
-	top = data->stack_a->index;
-	mid = data->stack_a->next->index;
-	bot = data->stack_a->next->next->index;
-	if (top > mid && mid < bot && top < bot)
-		sa(data);
-	else if (top > mid && mid > bot)
-	{
-		sa(data);
-		rra(data);
-	}
-	else if (top > mid && mid < bot && top > bot)
-		ra(data);
-	else if (top < mid && mid > bot && top < bot)
-	{
-		sa(data);
-		ra(data);
-	}
-	else if (top < mid && mid > bot && top > bot)
-		rra(data);
-}
 
 void	send_to_b(t_data *data, int min, int chunk_size)
 {

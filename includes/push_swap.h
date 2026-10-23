@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 12:58:07 by lbetella          #+#    #+#             */
-/*   Updated: 2026/10/22 13:05:30 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/23 19:44:00 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ void					print_movements(t_data *data);
 void					pivot(t_data *data, int len_a);
 void					b_to_a_complex(t_data *data);
 void					move_to_b(t_data *data, t_stack_node *choosen);
-
+void					less_than_five(t_data *data, int len_a);
+void					reverse_two_numbers_b(t_data *data);
 #endif

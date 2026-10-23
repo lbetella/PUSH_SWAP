@@ -6,62 +6,40 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:37:42 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/23 13:17:24 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/23 20:08:05 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// int	main(int argc, char **argv)
+// static void	ft_print_stack(char *name, t_stack_node *stack)
 // {
-// 	t_data	data;
+// 	t_stack_node	*current;
+// 	int				first;
 
-// 	data.mode = 0;
-// 	data.bench = 0;
-// 	data.stack_a = NULL;
-// 	data.stack_b = NULL;
-// 	if (argc < 2 || !parser(argc, argv, &data) || !data.stack_a)
+// 	ft_printf("=== STACK %s ===\n", name);
+// 	if (!stack)
 // 	{
-// 		ft_printf("Error\n");
-//		parser_free(NULL, data.stack_a);
-// 		return (1);
+// 		ft_printf("(vacía)\n");
+// 		ft_printf("================\n");
+// 		return ;
 // 	}
-// 	else
+// 	current = stack;
+// 	first = 1;
+// 	while (current != stack || first)
 // 	{
-// 		ft_printf("Modo: %i\nBench: %i\n", data.mode, data.bench);
-// 		mode_selector(&data);
+// 		ft_printf("Value: %d | Index: %d\n", current->value, current->index);
+// 		current = current->next;
+// 		first = 0;
 // 	}
-// 	return (0);
+// 	ft_printf("================\n");
 // }
-
-
-static void	ft_print_stack(char *name, t_stack_node *stack)
-{
-	t_stack_node	*current;
-	int				first;
-
-	ft_printf("=== STACK %s ===\n", name);
-	if (!stack)
-	{
-		ft_printf("(vacía)\n");
-		ft_printf("================\n");
-		return ;
-	}
-	current = stack;
-	first = 1;
-	while (current != stack || first)
-	{
-		ft_printf("Value: %d | Index: %d\n", current->value, current->index);
-		current = current->next;
-		first = 0;
-	}
-	ft_printf("================\n");
-}
 
 int	main(int argc, char **argv)
 {
 	t_data data;
-
+	int len_a;
+	
 	start(&data);
 
 	if (argc < 2)
@@ -76,15 +54,16 @@ int	main(int argc, char **argv)
 	
 	cal_index(data.stack_a);
 	data.disorder = cal_index_error(&data);
-	mode_selector(&data);
+	len_a = pos_upper_len(&data.stack_a);
+	if (len_a <= 5)
+		less_than_five(&data, len_a);
+	else
+		mode_selector(&data);
 
-	 ft_printf("[DEBUG] Modo: %i | Bench: %i\n", data.mode, data.bench);
-	 ft_print_stack("A", data.stack_a);
-	 ft_print_stack("B", data.stack_b);
+	// ft_printf("[DEBUG] Modo: %i | Bench: %i\n", data.mode, data.bench);
+	// ft_print_stack("A", data.stack_a);
+	// ft_print_stack("B", data.stack_b);
 
 	parser_free(NULL, data.stack_a);
-	
-	// parser_free(NULL, data.stack_b);
-
 	return (0);
 }
