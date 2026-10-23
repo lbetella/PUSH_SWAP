@@ -6,18 +6,14 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 17:45:45 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/22 13:14:16 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/22 18:05:39 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	start(t_data *data)
+static void	start_second(t_data *data)
 {
-	data->mode = 0;
-	data->bench = 0;
-	data->disorder = 0;
-	data->total_ops = 0;
 	data->p[0] = 0;
 	data->p[1] = 0;
 	data->p[2] = 0;
@@ -29,6 +25,14 @@ void	start(t_data *data)
 	data->p[8] = 0;
 	data->p[9] = 0;
 	data->p[10] = 0;
+}
+
+void	start(t_data *data)
+{
+	data->mode = 0;
+	data->bench = 0;
+	data->disorder = 0;
+	data->total_ops = 0;
 	data->pa = 0;
 	data->pb = 0;
 	data->ra = 0;
@@ -42,4 +46,5 @@ void	start(t_data *data)
 	data->ss = 0;
 	data->stack_a = NULL;
 	data->stack_b = NULL;
+	start_second(data);
 }
