@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   parser.c                                          :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: lbetella <lbetella@student.42malaga.com>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/10/17 17:36:03 by lbetella         #+#    #+#              */
-/*   Updated: 2026/10/20 19:35:33 by lbetella        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/17 17:36:03 by lbetella          #+#    #+#             */
+/*   Updated: 2026/10/24 18:30:45 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_limits_numbers(char *nb)
 	{
 		if (len > 11)
 			return (-1);
-		else if (len == 11 && ft_strncmp(&nb[1], "2147483647", 10) > 0)
+		else if (len == 11 && ft_strncmp(&nb[1], "2147483648", 10) > 0)
 			return (-1);
 	}
 	else
@@ -67,7 +67,7 @@ int	check_definitive_numbers(char **nb)
 		while (nb[j][i] != '\0')
 		{
 			if (!(nb[j][i] >= '0' && nb[j][i] <= '9') && !(nb[j][i] == '-'
-						|| nb[j][i] == '+'))
+					|| nb[j][i] == '+'))
 				return (-1);
 			if (nb[j][i] == '-' || nb[j][i] == '+')
 			{
@@ -121,8 +121,7 @@ int	parser(int argc, char **argv, t_data *data)
 			if (check_space_number(argv[i]) == -1)
 				return (0);
 			taking_value = ft_split(argv[i], ' ');
-			if (check_definitive_numbers(taking_value) == -1
-				|| taking_value == NULL)
+			if (!taking_value || check_definitive_numbers(taking_value) == -1)
 				return (parser_free(taking_value, NULL), 0);
 			if (convert_to_nbr(&data->stack_a, taking_value) == -1)
 				return (parser_free(taking_value, NULL), 0);
