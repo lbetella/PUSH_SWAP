@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:37:42 by guilfran          #+#    #+#             */
-/*   Updated: 2026/10/23 20:08:05 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/24 18:05:38 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,10 @@ int	main(int argc, char **argv)
 		parser_free(NULL, data.stack_a);
 		return (1);
 	}
-	
 	cal_index(data.stack_a);
 	data.disorder = cal_index_error(&data);
+	if (data.disorder == 0)
+		return (0);
 	len_a = pos_upper_len(&data.stack_a);
 	if (len_a <= 5)
 		less_than_five(&data, len_a);

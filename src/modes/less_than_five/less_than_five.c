@@ -6,7 +6,7 @@
 /*   By: guilfran <guilfran@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 14:00:09 by lbetella          #+#    #+#             */
-/*   Updated: 2026/10/23 19:47:21 by guilfran         ###   ########.fr       */
+/*   Updated: 2026/10/24 18:08:21 by guilfran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,6 @@ void	less_than_five(t_data *data, int len_a)
 		order_four_numbers(data);
 	else if (len_a == 5)
 		order_five_numbers(data);
-    bench_mode(data);
+	if (data->bench == 1)
+		bench_mode(data);
 }
