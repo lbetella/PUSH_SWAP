@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by guilfran, lbetella.
+*This project has been created as part of the 42 curriculum by guilfran, lbetella.*
 
 # Push_swap
 
