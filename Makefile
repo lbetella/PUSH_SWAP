@@ -1,4 +1,4 @@
-NAME = push_swap
+NAME = push_swa
 BONUS_NAME = checker
 
 CC = cc
