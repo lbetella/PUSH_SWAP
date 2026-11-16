@@ -21,7 +21,7 @@ void	cal_index(t_stack_node *stack)
 
 	first = 1;
 	again = stack;
-	while (again != stack || first == 1)
+	while (again != stack || first == 1
 	{
 		i = 1;
 		start = again->next;
