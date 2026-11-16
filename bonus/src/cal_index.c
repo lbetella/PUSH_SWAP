@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap_bonus.h"
+#include "../includes/push_swap_bonus.h
 
 void	cal_index(t_stack_node *stack)
 {
